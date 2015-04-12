@@ -18,11 +18,7 @@ import matplotlib.ticker as mticker
 import matplotlib.dates as mdates
 
 class processData:
-    def __init__(self, filename, tablename, split = True, extractTime = True):
-        self.data = self._getData(filename, tablename, split, extractTime)
-
-    ### Should be protected ###
-    def _getData(self, filename, tablename, split, extractTime):
+    def getData(self, filename, tablename, split = True, extractTime = True):
         conn = sqlite3.connect(filename)
         c = conn.cursor()
         Dict = []
@@ -43,14 +39,14 @@ class processData:
         if split:
             bid = data[(data['buy/sell'] == 'buy')]
             ask = data[(data['buy/sell'] == 'sell')]
-            return bid,ask
+            return [bid,ask]
         else:
             return data
 
     # Visualize the price trend and the spread between bid and ask overtime.
-    def graphRawPrice(self):
-        assert type(self.data == tuple)
-        bid, ask = self.data[0], self.data[1]
+    def graphRawPrice(self, data):
+        assert type(data == list)
+        bid, ask = data[0], data[1]
         fig = plt.figure(figsize=(10,7))
         ax1 = plt.subplot2grid((40,40),(0,0),rowspan=40,colspan=40)
 
