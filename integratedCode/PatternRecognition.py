@@ -8,11 +8,20 @@
 # Copyright:   (c) Superman 2015
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
-from processData import processData
+from proccessData import processData
+import numpy as np
+import pandas as pd
+import sqlite3
+import time
+import matplotlib
+import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
+import matplotlib.dates as mdates
 
 class PatternRecognition:
     def __init__(self, filename, tablename):
-        self.data = processData.getData(filename, tablename)
+        process = processData()
+        self.data = process.getData(filename, tablename)
         self.patternAr = []
         self.performanceAr = []
         self.avgLine = (np.array(data[0]['price'])+np.array(data[1]['price']))/2
