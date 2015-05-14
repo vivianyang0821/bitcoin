@@ -1,6 +1,7 @@
 ![alt tag](Wenshuai/img/bitcoin.png)
 ## AC297r Capstone Project: Bitcoin Research
 Team Member: Daniel Rajchwald, Wenwan Yang, Wenshuai Ye
+Website:https://vivianyang0821.github.io/#
 ####Introduction
 Bitcoin is developed by an anonymous hacker under the name Satoshi Nakamoto in 2009. It is a completely decentralized peer-to-peer system governed by open sourced algorithms. Bitcoin accounts are anonymous. They are just public key addresses without any personally identifiable information attached. Unlike other currencies, bitcoin has a maximum circulation of just under 21 million coins which cause the value of each coin to increase over time. Every transaction is verified by the entire Bitcoin network which makes it nearly impossible to counterfeit a Bitcoin. The motivation of this project is to implement some trading strategies and find the arbitrage opportunities of bitcoin. Some trading algorithms will be introduced in the following part. There are two ways to find the arbitrage opportunities. The first one is to buy a dual listed stock at a lower price in one market and simultaneously selling it at a higher price in another market. The second is the cross currency arbitrage which is an act of exploiting an arbitrage opportunity resulting from a pricing discrepancy among three different currencies in the foreign exchange currencies. We got the tick level data from Morgan Stanley and it is used to test performance of each algorithm.
 
